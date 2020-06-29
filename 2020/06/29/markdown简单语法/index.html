@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"bystander-none.github.io","root":"/noname.github.io/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"bystander-none.github.io","root":"/noname.github.io/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="更新：在上传到githubPage上显示效果与预览效果还是有些不同的：1.在某些特殊符号只是用于文本显示时，还是在其前面加上转义符\为妙。2.网页上显示表格只能左对齐（原因未查），本质懒狗，用到的时候再查算了NEXT主题升级到7.8又可以了表格各种对齐了3.怎么hexo的标签插件在代码行显示不出来的-_-||(不写了贴个链接算了)  第一次接触博客，在简单搭建hexo博客之后，首先学习怎么用ma">
@@ -115,6 +115,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -138,11 +139,38 @@
     <a href="/noname.github.io/archives" rel="section"><i class="fa fa-th fa-fw"></i>归档<span class="badge">2</span></a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
           
@@ -293,7 +321,7 @@
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br><span class="line"><span class="section">##### 五级标题</span></span><br><span class="line"><span class="section">###### 六级标题</span></span><br></pre></td></tr></table></figure>
 <h2 id="2-段落格式"><a href="#2-段落格式" class="headerlink" title="2.段落格式"></a>2.段落格式</h2><h3 id="2-1-字体"><a href="#2-1-字体" class="headerlink" title="2.1 字体"></a>2.1 字体</h3><p>在文字后面加入两个空格或者在两行之间空一行，可以实现文本换行</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">*斜体文本*</span>  </span><br><span class="line"><span class="emphasis">_斜体文本_</span>  </span><br><span class="line"><span class="strong">**粗体文本**</span>  </span><br><span class="line"><span class="strong">__粗体文本__</span>  </span><br><span class="line"><span class="strong">***粗斜体文本**</span>*  </span><br><span class="line"><span class="strong">___粗斜体文本__</span>_</span><br></pre></td></tr></table></figure>
-<h3 id="2-2-线与缩进"><a href="#2-2-线与缩进" class="headerlink" title="2.2 线与缩进"></a>2.2 线与缩进</h3><p><strong>缩进:</strong><br>&emsp;&emsp;<code>&amp;emsp;</code>或<code>&amp;#8195;</code>缩进两个空格大小，全角空格<br>&emsp;&emsp;<code>&amp;ensp;</code>或<code>&amp;#8194</code>缩进一个空格大小，半角空格<br><strong>分割线：</strong><br>&emsp;&#8195;单行内三个或以上的星号<kbd>***</kbd>、减号<kbd>---</kbd>、底线<kbd>___</kbd><br><strong>删除线：</strong><br>&emsp;&emsp;文字两端加上波浪线<kbd>~~</kbd>：<del>这是在两端添加了波浪号的结果</del><br><strong>下划线：</strong><br>&emsp;&emsp;使用HTML元素<code>&lt;u&gt;</code>标签实现：<u>通过HTML标签实现下划线</u></p>
+<h3 id="2-2-线与缩进"><a href="#2-2-线与缩进" class="headerlink" title="2.2 线与缩进"></a>2.2 线与缩进</h3><p><strong>缩进:</strong><br>&emsp;&emsp;<code>&amp;emsp;</code>或<code>&amp;#8195;</code>缩进两个空格大小，全角空格<br>&emsp;&emsp;<code>&amp;ensp;</code>或<code>&amp;#8194;</code>缩进一个空格大小，半角空格<br><strong>分割线：</strong><br>&emsp;&#8195;单行内三个或以上的星号<kbd>***</kbd>、减号<kbd>---</kbd>、底线<kbd>___</kbd><br><strong>删除线：</strong><br>&emsp;&emsp;文字两端加上波浪线<kbd>~~</kbd>：<del>这是在两端添加了波浪号的结果</del><br><strong>下划线：</strong><br>&emsp;&emsp;使用HTML元素<code>&lt;u&gt;</code>标签实现：<u>通过HTML标签实现下划线</u></p>
 <h3 id="2-3-区块"><a href="#2-3-区块" class="headerlink" title="2.3 区块"></a>2.3 区块</h3><p><strong>代码区块：</strong><br>使用反引号<kbd>`</kbd>画代码区块,文本中插入代码用<mark>`要插入的代码`</mark>实现，画一个代码块则如下所示   </p>
 <blockquote>
 <p>```<br>代码块<br>```  </p>
@@ -448,6 +476,10 @@
   
 
 
+
+
+  
+<script src="/noname.github.io/js/local-search.js"></script>
 
 
 

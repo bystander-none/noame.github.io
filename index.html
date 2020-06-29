@@ -271,65 +271,19 @@
 
       
           <hr>
-<p>更新，在上传到githubPage上显示效果与预览效果还是有些不同的：<br>1.在某些特殊符号只是用于文本显示时，还是在其前面加上转义符<code>\</code>为妙。  </p>
-<img src="/noname.github.io/2020/06/29/markdown%E7%AE%80%E5%8D%95%E8%AF%AD%E6%B3%95/%E7%BD%91%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%95%88%E6%9E%9C.jpg" class="" title="网页显示效果图">  
-<p><del>2.网页上显示表格只能左对齐（原因未查），本质懒狗，用到的时候再查算了</del><br>查到了是NEXT主题的问题，NEXT主题升级到7.8又可以了</p>
+<p>更新，在上传到githubPage上显示效果与预览效果还是有些不同的：<br>1.在某些特殊符号只是用于文本显示时，还是在其前面加上转义符<code>\</code>为妙。<br><del>2.网页上显示表格只能左对齐（原因未查），本质懒狗，用到的时候再查算了</del><br>查到了是NEXT主题的问题，NEXT主题升级到7.8又可以了</p>
 <hr>
 <p>第一次接触博客，在简单搭建hexo博客之后，首先学习怎么用markdown写博文，所以第一篇就先写markdown的简单语法，之后再逐步完善博客界面。  </p>
 <p>markdown编写使用vscode+两个插件：<br>Markdown All in One 和 Markdown Preview Github Styling  </p>
 <p>安装好插件后，vscode点击右上脚的侧边预览即可预览博文</p>
-<h2 id="1-标题大小"><a href="#1-标题大小" class="headerlink" title="1.标题大小"></a>1.标题大小</h2><p>使用井号<kbd>#</kbd>可以设置标题大小，注意<kbd>#</kbd>后面标题需要加空格</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br><span class="line"><span class="section">##### 五级标题</span></span><br><span class="line"><span class="section">###### 六级标题</span></span><br></pre></td></tr></table></figure>
-<h2 id="2-段落格式"><a href="#2-段落格式" class="headerlink" title="2.段落格式"></a>2.段落格式</h2><h3 id="2-1-字体"><a href="#2-1-字体" class="headerlink" title="2.1 字体"></a>2.1 字体</h3><p>在文字后面加入两个空格或者在两行之间空一行，可以实现文本换行</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">*斜体文本*</span>  </span><br><span class="line"><span class="emphasis">_斜体文本_</span>  </span><br><span class="line"><span class="strong">**粗体文本**</span>  </span><br><span class="line"><span class="strong">__粗体文本__</span>  </span><br><span class="line"><span class="strong">***粗斜体文本**</span>*  </span><br><span class="line"><span class="strong">___粗斜体文本__</span>_</span><br></pre></td></tr></table></figure>
-<h3 id="2-2-线与缩进"><a href="#2-2-线与缩进" class="headerlink" title="2.2 线与缩进"></a>2.2 线与缩进</h3><p><strong>缩进:</strong><br>&emsp;&emsp;<code>&amp;emsp;</code>或<code>&amp;#8195;</code>缩进两个空格大小，全角空格<br>&emsp;&emsp;<code>&amp;ensp;</code>或<code>&amp;#8194</code>缩进一个空格大小，半角空格<br><strong>分割线：</strong><br>&emsp;&#8195;单行内三个或以上的星号<kbd>***</kbd>、减号<kbd>---</kbd>、底线<kbd>___</kbd><br><strong>删除线：</strong><br>&emsp;&emsp;文字两端加上波浪线<kbd>~~</kbd>：<del>这是在两端添加了波浪号的结果</del><br><strong>下划线：</strong><br>&emsp;&emsp;使用HTML元素<code>&lt;u&gt;</code>标签实现：<u>通过HTML标签实现下划线</u></p>
-<h3 id="2-3-区块"><a href="#2-3-区块" class="headerlink" title="2.3 区块"></a>2.3 区块</h3><p><strong>代码区块：</strong><br>使用反引号<kbd>`</kbd>画代码区块,文本中插入代码用<mark>`要插入的代码`</mark>实现，画一个代码块则如下所示   </p>
-<blockquote>
-<p>```<br>代码块<br>```  </p>
-</blockquote>
-<p><strong>显示区块：</strong><br>在段落前用<code>&gt;</code>号加空格（空格不知道是不是必须的，在VS上预览有无空格效果一样）<br>此外区块可嵌套:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; 第一层</span><br><span class="line">&gt;&gt; 第二层</span><br><span class="line">&gt;&gt;&gt; 第三层</span><br></pre></td></tr></table></figure>
-<p>显示效果  </p>
-<blockquote>
-<p>第一层</p>
-<blockquote>
-<p>第二层</p>
-<blockquote>
-<p>第三层  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="3-插入样式"><a href="#3-插入样式" class="headerlink" title="3.插入样式"></a>3.插入样式</h2><h3 id="3-1表格"><a href="#3-1表格" class="headerlink" title="3.1表格"></a>3.1表格</h3><p>示例代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| 左对齐 | 右对齐 | 居中对齐 |</span><br><span class="line">| -----| ----: | :----: |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br></pre></td></tr></table></figure>
-<p>注：第二行中<code>:</code>用于设置对齐方式，不填，默认左对齐<br>显示结果：</p>
-<blockquote>
-<table>
-<thead>
-<tr>
-<th>左 对 齐</th>
-<th align="right">右 对 齐</th>
-<th align="center">居 中 对 齐</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>单元格</td>
-<td align="right">单元格</td>
-<td align="center">单元格</td>
-</tr>
-<tr>
-<td>单元格</td>
-<td align="right">单元格</td>
-<td align="center">单元格</td>
-</tr>
-</tbody></table>
-</blockquote>
-<h3 id="3-2-图片"><a href="#3-2-图片" class="headerlink" title="3.2 图片"></a>3.2 图片</h3><p>①可用HTML的<code>&lt;img&gt;</code>标签，该方法可以指定大小<br>②md的图片格式<code>![alt 属性文本](图片地址 &quot;可选标题&quot;)</code>，该方法无法指定图片大小</p>
-<h3 id="3-3-链接"><a href="#3-3-链接" class="headerlink" title="3.3 链接"></a>3.3 链接</h3><p>有名称则：<code>[链接名称](链接地址)</code>、或者直接贴链接：<code>&lt;链接地址&gt;</code><br>hexo的插入图片方法<code></code></p>
-<h2 id="4-其他拓展"><a href="#4-其他拓展" class="headerlink" title="4.其他拓展"></a>4.其他拓展</h2><p>通过查到的资料，好像markdown文件好似是可以支持许多HTML标签的，在本片博文中就用了<code>&lt;u&gt;</code>下划线、<code>&lt;kbd&gt;</code>键盘文本、<code>&lt;mark&gt;</code>标记。至于其他标签可以以后试试。</p>
-<p>此外markdown还可以编写流程图和插入数学公式，具体方法也以后再学了。</p>
-<hr>
-<p>参考链接：<a href="https://www.runoob.com/markdown/" target="_blank" rel="noopener">菜鸟教程Markdown</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/noname.github.io/2020/06/29/markdown%E7%AE%80%E5%8D%95%E8%AF%AD%E6%B3%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -386,20 +340,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+          <hr>
+<p>流水的语言，铁打的Hello World<br>这是初始化hexo自带的博文，留着了</p>
+<hr>
+<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/noname.github.io/2020/06/27/hello-world/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
